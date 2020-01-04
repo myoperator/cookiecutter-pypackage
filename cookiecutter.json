@@ -1,0 +1,10 @@
+{
+  "full_name": "MyOperator",
+  "email": "dev@myoperator.co",
+  "project_namespace": "myoperator",
+  "project_name": "package",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "project_short_description": "MyOperator package short description of what it does and who needs it.",
+  "version": "0.1.0",
+  "use_pytest": "n"
+}
