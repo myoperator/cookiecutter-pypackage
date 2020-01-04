@@ -65,8 +65,9 @@ def test_year_compute_in_license_file(cookies):
 
 def project_info(result):
     """Get toplevel dir, project_slug, and project dir from baked cookies"""
+    print()
     project_path = str(result.project)
-    project_slug = os.path.split(project_path)[-1]
+    project_slug = result.context.get('project_slug', os.path.split(project_path)[-1])
     project_dir = os.path.join(project_path, project_slug)
     return project_path, project_slug, project_dir
 
@@ -161,7 +162,7 @@ def test_using_pytest(cookies):
     ) as result:
         assert result.project.isdir()
         test_file_path = result.project.join(
-            'tests/test_myoperator_package.py'
+            'tests/test_package.py'
         )
         lines = test_file_path.readlines()
         assert "import pytest" in ''.join(lines)
@@ -196,7 +197,7 @@ def test_bake_with_no_console_script(cookies):
     context = {'command_line_interface': "No command-line interface"}
     result = cookies.bake(extra_context=context)
     project_path, project_slug, project_dir = project_info(result)
-    found_project_files = os.listdir(project_dir)
+    found_project_files = os.listdir(os.path.join(project_path, 'myoperator', project_slug))
     assert "cli.py" not in found_project_files
 
     setup_path = os.path.join(project_path, 'setup.py')
