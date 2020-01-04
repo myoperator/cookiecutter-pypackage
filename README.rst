@@ -2,17 +2,9 @@
 Cookiecutter PyPackage
 ======================
 
-.. image:: https://pyup.io/repos/github/audreyr/cookiecutter-pypackage/shield.svg
-     :target: https://pyup.io/repos/github/audreyr/cookiecutter-pypackage/
-     :alt: Updates
-
-.. image:: https://travis-ci.org/audreyr/cookiecutter-pypackage.svg?branch=master
-    :target: https://travis-ci.org/audreyr/cookiecutter-pypackage
-
 Cookiecutter_ template for a Python package.
 
-* GitHub repo: https://github.com/audreyr/cookiecutter-pypackage/
-* Documentation: https://cookiecutter-pypackage.readthedocs.io/
+* GitHub repo: https://github.com/myoperator/cookiecutter-pypackage/
 * Free software: BSD license
 
 Features
